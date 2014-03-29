@@ -1,0 +1,35 @@
+Name       : swordfish
+Version    : 0.0.0.20140329.0f1d929
+Release    : 1
+Group      : Applications/System
+License    : GPLv2+
+URL        : https://github.com/mauios/swordfish.git
+Summary    : File manager
+Description: File manager for the Hawaii desktop environment.
+Sources    : 
+    - swordfish-%{version}.tar.xz
+
+Configure  : cmake 
+ConfigOptions: 
+    - -DCMAKE_BUILD_TYPE=RelWithDebInfo 
+
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Network
+    - Qt5Qml
+    - Qt5Quick
+
+PkgBR:
+    - cmake
+    - qt5-qttools-linguist
+
+Files:  
+   - "%{_bindir}/swordfish"
+   - "%{_libdir}/hawaii/qml/Swordfish/*"
+   - "%{_datadir}/hawaii-2048/styles/*"
+   - "%{_datadir}/dbus-1/services/*"
+   - "%{_datadir}/applications/*"
+   - "%{_datadir}/swordfish/translations/*"
